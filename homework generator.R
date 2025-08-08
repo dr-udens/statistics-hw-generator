@@ -1,7 +1,6 @@
-# 1. kolonna - nedēļas diena
-# 2. kolonna - screentime, h
-# 3. kolonna - notifikacijas
-for (x in 1:29){
+n <- 29
+path <- "C:/Users" #write the folder path where you want the files here
+for (x in 1:n){
 
 r12 <- -0.4
 r23 <- 0.6
@@ -25,5 +24,6 @@ df <- as.data.frame(mvrnorm(n=100, mu=mu, Sigma=sigma))
 df$V1 <- round(df$V1, digits = 0)
 
 library(writexl)
-write_xlsx(df, paste("C:/Users/rida/Documents/skola/matematika I/4 statistika/presentations and tasks/homework variants/homework", as.character(x), ".xlsx"))
+write_xlsx(df, paste(path, "/homework", as.character(x), ".xlsx"))
 }
+# files will be named "homework1.xlsx"
